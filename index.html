@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fer Cakes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        .indie-flower-regular {
+            font-family: "Indie Flower", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .available {
+            background-color: green;
+            color: white;
+        }
+
+        .unavailable {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="indie-flower-regular bg-gray-50 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-pink-600 py-4 hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-white">Fer Cakes</h1>
+            <nav class="space-x-6">
+                <a href="#sobre" class="text-white hover:text-gray-200">Sobre</a>
+                <a href="#galeria" class="text-white hover:text-gray-200">Galeria</a>
+                <a href="#agenda" class="text-white hover:text-gray-200">Agenda</a>
+                <a href="#contato" class="text-white hover:text-gray-200">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-96"
+        style="background-image: url('images/chocolate-dessert-pastry-cake-5k-yw-2048x1152.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 text-center text-white md:p-20 p-16">
+            <h2 class="text-4xl font-semibold mb-4">Seja bem-vindo à Fer Cakes</h2>
+            <p class="text-lg mb-6">Bolos feitos com carinho para tornar seus momentos ainda mais doces!</p>
+            <a href="#galeria"
+                class="bg-pink-600 text-white px-6 py-3 rounded-full md:text-lg text-sm hover:bg-pink-600">Confira
+                Nossos Bolos</a>
+        </div>
+    </section>
+
+    <!-- Sobre nós -->
+    <section id="sobre" class="py-16 bg-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-pink-500 mb-4">Sobre a Fer Cakes</h2>
+            <p class="text-lg text-gray-700">Somos uma confeitaria especializada em bolos decorados e deliciosos, feitos
+                com ingredientes frescos e selecionados. Cada bolo é preparado com muito carinho para tornar seus
+                momentos especiais ainda mais doces!</p>
+        </div>
+    </section>
+
+    <!-- Galeria de Bolos -->
+    <section id="galeria" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold text-pink-500 mb-8">Nossos Bolos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="images/WhatsApp Image 2024-11-04 at 21.15.51 (1).jpeg" alt="Bolo 1"
+                        class="w-full h-56 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Bolo Decorado</h3>
+                        <p class="text-gray-600">Delicado e elegante para sua criança.</p>
+                        <button onclick="handleCakeSelection('Bolo Decorado', this)"
+                            class="cake-button bg-pink-500 text-white py-2 px-4 rounded-full mt-4">Escolher</button>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="images/WhatsApp Image 2024-11-04 at 21.15.51.jpeg" alt="Bolo 2"
+                        class="w-full h-56 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Bolo de Aniversário</h3>
+                        <p class="text-gray-600">Perfeito para comemorações especiais.</p>
+                        <button onclick="handleCakeSelection('Bolo de Aniversário', this)"
+                            class="cake-button bg-pink-500 text-white py-2 px-4 rounded-full mt-4">Escolher</button>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="images/WhatsApp Image 2024-11-04 at 21.16.04 (1).jpeg" alt="Bolo 3"
+                        class="w-full h-56 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Bolo de Chocolate</h3>
+                        <p class="text-gray-600">Irresistível para os amantes de chocolate!</p>
+                        <button onclick="handleCakeSelection('Bolo de Chocolate', this)"
+                            class="cake-button bg-pink-500 text-white py-2 px-4 rounded-full mt-4">Escolher</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda -->
+    <section id="agenda" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold text-pink-500 mb-8">Agende seu Bolo</h2>
+
+            <!-- Navegação de semana -->
+            <div class="flex justify-center items-center space-x-4 mb-8">
+                <button onclick="navigateWeek(-1)"
+                    class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600">
+                    Essa Semana
+                </button>
+                <button onclick="navigateWeek(1)"
+                    class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600">
+                    Próxima Semana
+                </button>
+            </div>
+
+            <!-- Exibição do bolo selecionado -->
+            <p class="text-lg mb-4" id="selected-cake">Você escolheu: Nenhum bolo selecionado</p>
+
+            <!-- Exibição da data selecionada -->
+            <p class="text-lg mb-4" id="selected-date">Data escolhida: Nenhuma data selecionada</p>
+
+            <!-- Opção de Retirada ou Entrega -->
+            <div class="flex justify-center items-center space-x-6 mb-8">
+                <label class="text-lg text-gray-700">Escolha uma opção:</label>
+                <div class="flex items-center space-x-4">
+                    <label class="flex items-center">
+                        <input type="radio" name="deliveryOption" value="retirada" class="mr-2"
+                            onclick="handleDeliveryOptionChange()">
+                        <span>Retirada</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="deliveryOption" value="entrega" class="mr-2"
+                            onclick="handleDeliveryOptionChange()">
+                        <span>Entrega</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Agenda Semanal -->
+            <div id="agenda-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8">
+                <!-- Os dias da semana serão gerados dinamicamente -->
+            </div>
+
+            <!-- WhatsApp Link -->
+            <div class="mt-8">
+                <a id="whatsapp-link" href="#" class="bg-green-600 text-white py-2 px-4 rounded-full">Enviar Pedido pelo
+                    WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato e Rodapé Integrado -->
+    <section id='contato' class="py-16 bg-pink-100 section-title">
+        <div class="container mx-auto max-w-screen-xl text-center">
+            <h2 class="section-title text-center text-2xl sm:text-3xl mb-8">Contato</h2>
+            <p class="text-lg text-gray-800 mb-8">Entre em contato com a gente!</p>
+
+            <!-- Botões de contato -->
+            <div class="flex flex-col md:flex-row justify-center items-center mb-8">
+                <!-- Botão para ligar -->
+                <a href="tel:+5514981761595"
+                    class="bg-pink-600 text-white py-2 px-4 rounded-full mb-4 md:mb-0 md:mr-4 hover:bg-pink-500 transition text-sm border border-pink-400">
+                    <i class="fas fa-phone-alt mr-2"></i> (14) 99829-1210
+                </a>
+                <!-- Botão para WhatsApp -->
+                <a href="https://wa.me/5514998291210?text=Gostaria%20de%20mais%20informações%20sobre%20os%20serviços."
+                    target="_blank"
+                    class="bg-pink-600 text-white py-2 px-4 rounded-full hover:bg-pink-500 transition text-sm border border-pink-400">
+                    <i class="fab fa-whatsapp mr-2"></i> Enviar Mensagem
+                </a>
+            </div>
+
+            <!-- Rodapé -->
+            <footer class="text-gray-600 text-sm mt-12">
+                <p>&copy; 2024 Fer Cakes. Todos os direitos reservados.</p>
+                <div class="mt-4">
+                    <a href="https://www.instagram.com/fer_cakesagudos"
+                        class="text-purple-800 hover:text-purple-500">Instagram</a> |
+                    <a href="#" class="text-blue-700 hover:text-blue-400">Facebook</a> |
+                    <a href="#" class="text-green-700 hover:text-green-400">WhatsApp</a>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <!-- Notificação de opções de pagamento -->
+    <div id="payment-notification"
+        class="notification hidden bg-green-600 text-white p-4 rounded-lg fixed bottom-4 left-4 right-4 shadow-lg z-50">
+        <div class="flex justify-between items-center">
+            <p>Opções de pagamento: Crédito, Débito e PIX</p>
+            <button onclick="closeNotification()" class="text-white font-bold hover:text-gray-200">
+                Fechar
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Exibe a notificação ao carregar a página
+        window.onload = function () {
+            const notification = document.getElementById('payment-notification');
+            notification.classList.remove('hidden');
+        };
+
+        // Função para fechar a notificação
+        function closeNotification() {
+            const notification = document.getElementById('payment-notification');
+            notification.classList.add('hidden');
+        }
+    </script>
+    <script>
+        const formatDate = (date) => {
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(date).toLocaleDateString('pt-BR', options);
+        };
+
+        const getWeekDates = (date) => {
+            const startOfWeek = new Date(date);
+            startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay());
+
+            const weekDates = [];
+            for (let i = 0; i < 7; i++) {
+                const dayOfWeek = new Date(startOfWeek);
+                dayOfWeek.setDate(startOfWeek.getDate() + i);
+                weekDates.push(dayOfWeek);
+            }
+            return weekDates;
+        };
+
+        const updateAgenda = (date) => {
+            const weekDates = getWeekDates(date);
+            const agendaContainer = document.getElementById("agenda-container");
+            agendaContainer.innerHTML = "";
+
+            weekDates.forEach((date, index) => {
+                const dayDiv = document.createElement("div");
+                dayDiv.classList.add("bg-white", "p-4", "rounded-lg", "shadow-lg", "text-center", "cursor-pointer");
+                dayDiv.innerHTML = `
+                        <h3 class="font-semibold text-xl text-gray-800">${formatDate(date)}</h3>
+                        <p class="text-sm ${index % 2 === 0 ? 'text-green-600' : 'text-red-600'}">${index % 2 === 0 ? "Disponível" : "Indisponível"}</p>
+                        `;
+                dayDiv.addEventListener("click", () => {
+                    selectedDate = date;
+                    document.getElementById("selected-date").textContent = `Data escolhida: ${formatDate(date)}`;
+                    updateWhatsAppLink();
+                });
+                agendaContainer.appendChild(dayDiv);
+            });
+        };
+
+        let currentDate = new Date();
+        const navigateWeek = (direction) => {
+            currentDate.setDate(currentDate.getDate() + direction * 7);
+            updateAgenda(currentDate);
+        };
+
+        let selectedCake = "";
+        let selectedDate = null;
+        let selectedDeliveryOption = "";
+
+        const handleCakeSelection = (cake, button) => {
+            selectedCake = cake;
+
+            const buttons = document.querySelectorAll('.cake-button');
+            buttons.forEach(b => b.classList.remove("bg-pink-500", "text-white"));
+            button.classList.add("bg-pink-500", "text-white");
+
+            document.getElementById("selected-cake").textContent = `Bolo escolhido: ${selectedCake}`;
+            updateWhatsAppLink();
+        };
+
+        const handleDeliveryOptionChange = () => {
+            const deliveryOption = document.querySelector('input[name="deliveryOption"]:checked');
+            if (deliveryOption) {
+                selectedDeliveryOption = deliveryOption.value;
+                document.getElementById("selected-delivery-option").textContent = `Opção escolhida: ${selectedDeliveryOption === 'retirada' ? 'Retirada' : 'Entrega'}`;
+                updateWhatsAppLink();
+            }
+        };
+
+        const updateWhatsAppLink = () => {
+            const whatsappLink = document.getElementById("whatsapp-link");
+
+            if (selectedCake && selectedDate && selectedDeliveryOption) {
+                const message = `Gostaria de encomendar o "${selectedCake}" para a data ${formatDate(selectedDate)}. Opção de entrega/retirada: ${selectedDeliveryOption === 'retirada' ? 'Retirada' : 'Entrega'}.`;
+                whatsappLink.href = `https://wa.me/5514998291210?text=${encodeURIComponent(message)}`;
+                whatsappLink.classList.remove("opacity-50", "cursor-not-allowed");
+                whatsappLink.onclick = null;
+            } else {
+                whatsappLink.href = '#';
+                whatsappLink.classList.add("opacity-50", "cursor-not-allowed");
+                whatsappLink.onclick = function (event) {
+                    event.preventDefault();
+                    alert('Por favor, complete todas as opções antes de enviar seu pedido.');
+                };
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updateAgenda(currentDate);
+        });
+    </script>
+</body>
+
+</html>
